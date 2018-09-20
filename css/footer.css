@@ -1,0 +1,44 @@
+.footer{
+	width: 100%;
+	height: 100px;
+	background:#070B1F;
+	overflow: hidden
+}
+.scroll{
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	background: url(../img/scrollTop1.png) no-repeat;
+	bottom: 14px;
+	right: 14px;
+	display: none;
+}
+.scroll:hover{
+	background-image: url(../img/scrollTop2.png)
+}
+.foot{
+	
+	height: 100px;
+	margin: 13px 120px;
+	text-align: center;
+}
+.foot li{
+	float: left;
+	margin: 5px
+	
+}
+.foot li>a{
+	color: #CCCCCC;
+	font-size: 14px;
+	
+}
+.container li>a:hover{
+	color: red;
+	
+}
+.foot p{
+	margin-top: 10px;
+	font-size: 14px;
+	color: #CCCCCC;
+	
+}

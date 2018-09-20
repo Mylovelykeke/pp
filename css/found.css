@@ -1,0 +1,101 @@
+.foundfriend {
+	display: block;
+	font-size: 40px;
+	font-weight: bolder;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 100px;
+}
+
+.foundMain {
+	padding-top: 60px;
+	width: 100%;
+}
+
+.found-Load select {
+	width: 150px;
+	height: 30px;
+	border: 1px solid skyblue;
+	font-size: 16px;
+	margin: 10px 10px 50px;
+}
+
+.foundsize {
+	display: block;
+	font-size: 20px;
+	color: #070B1F;
+	font-weight: bolder;
+}
+
+.found-Load>input {
+	border: 0 none;
+	font-size: 18px;
+	background: skyblue;
+	width: 150px;
+	height: 30px;
+	margin-left: 20px;
+	text-align: center;
+}
+.found-Load>input:hover{
+	background: deepskyblue;
+}
+.chatfriend {
+	padding: 30px;
+	width: 100%;
+	height: 100%;
+}
+.chatfriend>ul>li{
+	position: relative;
+	float: left;
+	width: 350px;
+	height: 250px;
+	margin: 10px;
+	transition: all .6s ease;
+	background: url(../img/person.jpeg) no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.chatfriend>ul>li:hover .chatShadow{
+	opacity: 1;
+	width: 350px;
+}
+.chatShadow{
+	position: absolute;
+	width: 90px;
+	height: 250px;
+	background: rgba(0,0,0,0.9);
+	opacity:0;
+	transition: all .6s ease;
+	padding-left: 10px;
+}
+.chatname{
+	display: block;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 20px;
+	color: #CCCCCC;
+}
+.chatage{
+	display: block;
+	font-size: 20px;
+	color: #CCCCCC;
+	margin: 10px;
+}
+.chatreda{
+	width: 90%;
+	color: #CCCCCC;
+	font-size: 16px;
+	display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;
+overflow: hidden;
+}
+.more{
+	width: 100%;
+	height: 30px;
+	color: white;
+	line-height: 30px;
+	background: salmon;
+	text-align: center;
+	margin: 0 auto;
+	cursor: pointer;
+}

@@ -1,0 +1,351 @@
+.nav {
+	width: 100%;
+	height: 100%;
+}
+
+.navImg {
+	position: relative;
+	margin-top: 15px;
+	width: 660px;
+	height: 330px;
+	overflow: hidden;
+}
+
+.aImg {
+	position: absolute;
+	width: 500%;
+	height: 370px;
+}
+
+.aImg>li {
+	float: left;
+	width: 660px;
+	height: 370px;
+}
+
+.aImg>li>img {
+	width: 100%;
+}
+
+.navImg ol {
+	position: absolute;
+	bottom: 25px;
+	left: 285px;
+}
+
+.navImg ol>li {
+	float: left;
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	border-radius: 50%;
+	background: white;
+}
+
+.nav-login {
+	margin: 15px 50px 10px 0;
+	width: 360px;
+	height: 100%;
+	background: rgb(244, 244, 244, 250);
+}
+
+.pass-login {
+	background: white;
+	width: 300px;
+	height: 280px;
+	border-radius: 2px;
+	margin: 20px 30px;
+	padding-top: 10px;
+	overflow: hidden;
+}
+
+.pass-login>span {
+	display: block;
+	font-size: 20px;
+	font-weight: bolder;
+	margin: 20px 0 10px 100px;
+}
+
+.pass-login>.login-form {
+	padding-left: 40px;
+}
+
+.pass-login>.login-form .login-one {
+	top: 13px;
+	left: 46px;
+}
+
+.pass-login>.login-form .login-two {
+	top: 55px;
+	left: 46px;
+}
+
+.nav-login+div img {
+	width: 100%;
+	height: 68px;
+	margin: 12px 0;
+}
+
+
+/*三级导航*/
+
+#nav {
+	width: 100%;
+	height: 62px;
+	margin-top: 5px;
+	background: #070B1F;
+}
+
+.nav-menu>li {
+	position: relative;
+	float: left;
+	width: 180px;
+	height: 60px;
+	text-align: center;
+}
+
+.nav-menu li>a {
+	color: #fff;
+	line-height: 60px;
+	font-size: 20px;
+	padding: 16px 34px 20px 40px;
+}
+
+.three-d {
+	/* 设置3D舞台布景 */
+	/*设置3D舞台布景过渡效果*/
+	transition: all 0.7s linear;
+	position: relative;
+}
+
+
+/*给不是当前状态的3D舞台的悬浮与聚焦状态设置变形效果*/
+
+.three-d:hover .three-d-box,
+.three-d:focus .three-d-box {
+	transform: translateZ(-25px) rotateX(90deg);
+}
+
+.three-d-box {
+	/*给3D舞台中“.three-d-box”设置过渡与变形效果*/
+	transform: translateZ(-25px);
+	transition: all .3s ease-out;
+	transform-style: preserve-3d;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 120%;
+	height: 100%;
+}
+
+
+/*给导航设置3D前，与3D后变形效果*/
+
+.front {
+	transform: rotateX(0deg) translateZ(25px);
+}
+
+.back {
+	transform: rotateX(-90deg) translateZ(25px);
+	color: #FFE7C4;
+}
+
+.front,
+.back {
+	width: 120px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #070B1F;
+	color: white;
+	box-sizing: border-box;
+	padding: 0px 0px 0px 0px;
+}
+
+
+/*设置导航当前状态与悬浮状态下的背景效果*/
+
+.nav-menu li .active .front,.back,
+.nav-menu>li>a:hover .front,
+.nav-menu>li>a:hover .back {
+	background-color: skyblue;
+}
+
+.three-d ol{
+	position: absolute;
+	z-index: 1000;
+	top: 60px;
+	left: 0px;
+	display: none;
+}
+.three-d ol>li{
+	width:120px;
+	height: 40px;
+	color: white;
+	font-size: 14px;
+	line-height: 40px;
+	background: #777777;
+	cursor: pointer;
+}
+/*可能认识的人*/
+
+.know {
+	position: relative;
+	margin-top: 10px;
+	width: 100%;
+	height: 202px;
+	/*background: rgba(0,0,0,0.2);*/
+	overflow: hidden;
+}
+
+.know-person {
+	position: absolute;
+	left: 0;
+}
+
+.know>ul {
+	width: 150%;
+}
+
+.know-two {
+	position: relative;
+	float: left;
+	margin: 0 4px;
+}
+
+.know-two>li {
+	float: left;
+	width: 150px;
+	height: 200px;
+	border: 1px solid #CCCCCC;
+	border-right: transparent;
+	background: white;
+	transition: all 1s ease;
+}
+
+.know-two div {
+	position: relative;
+	float: left;
+	width: 0px;
+	height: 200px;
+	background: white;
+	border: 1px solid #CCCCCC;
+	border-left: transparent;
+	transition: all .6s ease;
+	opacity: 0;
+}
+
+.know-two div::after {
+	position: absolute;
+	content: "";
+	border: 12px solid transparent;
+	border-right: 16px solid white;
+	top: 107px;
+	left: -28px;
+}
+
+.know-two .know-move {
+	color: white;
+	background: #070B1F;
+}
+
+.know-two .move {
+	width: 150px;
+	opacity: 1;
+}
+
+.know-two>li>span {
+	display: block;
+	width: 80px;
+	height: 90px;
+	border: 2px solid white;
+	margin: 26px 30px;
+	border-radius: 50%;
+	background: url(../img/14.jpeg) no-repeat 0 0;
+	background-size: cover;
+}
+
+.know-two>li>p {
+	text-align: center;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.know-two>li:hover {
+	box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.5);
+}
+.know-two>div>p{
+	text-align: center;
+	font-size: 18px;
+	margin-top: 10px;
+	font-weight: bolder;
+}
+.know-two>div>ol{
+	position: absolute;
+	bottom: 0;
+	left: 20%;
+}
+.know-two>div>ol>li{
+	float: left;
+	width: 80px;
+	height: 20px;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	line-height: 20px;
+	margin: 5px 0;
+	color: white;
+	background: #070B1F;
+	border-radius: 10px;
+	cursor: pointer;
+}
+/**/
+.trend {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 10px 0px;
+	border: 1px solid #CCCCCC;
+}
+
+.trend .photo {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #CCCCCC;
+	border-radius: 50%;
+	top: 20px;
+	left: 10px;
+	background: url(../img/logo.png) no-repeat;
+	background-size: cover;
+	z-index: 20;
+}
+
+.trend i {
+	font-style: normal;
+	display: block;
+	margin: 30px 0 10px 70px;
+}
+
+.trend .trend-contain {
+	position: relative;
+	width: 90%;
+	height: 100%;
+	margin-left: 60px;
+	padding: 20px;
+	box-shadow: -4px 4px 15px 0px #777;
+	border-radius: 6px;
+	text-indent: 2em;
+}
+
+.trend>ul>li {
+	float: left;
+	line-height: 50px;
+	margin: 0 20px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #777777;
+}
+
+.trend>ul>li>a {
+	color: #777777;
+}

@@ -1,0 +1,47 @@
+.allTrend{
+	padding-top: 80px;
+	min-height: 1000px;
+}
+.allTrend span{
+	display: block;
+	font-size: 40px;
+	font-weight: bolder;
+	line-height: 80px;
+}
+.trend{
+	margin: 10px 0;
+	width: 100%;
+	border: 1px solid #CCCCCC;
+	overflow: hidden;
+	box-shadow: 0px 0px 4px 1px #CCCCCC;
+}
+img{
+	width: 100%;
+}
+video{
+	width: 325px;
+	height: 185px;
+}
+.trend-img{
+	float: left;
+	width: 30%;
+	max-height: 200px;
+	overflow: hidden;
+}
+.txt{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+-webkit-line-clamp: 8;
+overflow: hidden;
+	text-indent: 2em;
+	width: 69%;
+	float: right;
+	font-size: 18px;
+	
+}
+#muban{
+	display: none;
+}
+#mubanvideo{
+	display: none;
+}

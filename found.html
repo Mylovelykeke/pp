@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>寻找更多好友</title>
+
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/found.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<script src="js/jquery-1.12.4.js"></script>
+		<script src="js/found.js"></script>
+	</head>
+
+	<body>
+		<!--开头-->
+		<div class="header"></div>
+		<div class="foundMain">
+			<div class="container">
+				<span class="foundfriend">寻找好友</span>
+				<div class=" found-Page">
+					<div class="found-Load">
+						<span class="foundsize">选择城市</span>
+						<select class="one">
+							<option value="">请选择省份</option>
+						</select>
+						<select class="two">
+							<option value="">请选择城市</option>
+						</select>
+						<select class="three">
+							<option value="">请选择区域</option>
+						</select>
+						<input type="submit" name="" id="" value="搜索好友" />
+						<span class="foundsize">添加好友</span>
+					</div>
+				</div>
+				<div class="chatfriend clearfix">
+					<ul>
+						<li id="muban" class=" bounceInLeft animated">
+							<div class="chatShadow">
+								<div class="chatname">昵称：风一般的男子</div>
+								<span class="chatage chatNumber">年龄：20</span>
+								<span class="chatage">性别：男</span>
+								<span class="chatreda"><h4>个性签名：</h4>　　今天年起是倒萨大师大师大师大师大师大师法发发萨达四大大
+								发生是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是是
+								</span>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+				<div class="more">加载更多</div>
+			</div>
+		</div>
+		<!--页脚-->
+		<div class="footer"></div>
+	</body>
+
+</html>
+<script>
+	var pox = $(".one").val()
+	$.ajax({
+		type: "get",
+		url: "./js/region.php",
+		data: {
+			"type": "p",
+			"pid": "000000"
+		},
+		success: function(data) {
+			$.each(data, function(k, v) {
+				var dom = "<option value ='" + k + "'>" + v + "</option>";
+				$(".one").append(dom)
+
+				//
+			})
+		}
+	})
+	//
+	$(".one").change(function() {
+		$(".two").val("")
+		$(".two").get(0).options.length = 1
+		var pop = $(".one").val()
+		$.ajax({
+			type: "get",
+			url: "./js/region.php",
+			data: {
+				"type": "c",
+				"pid": pop
+			},
+			success: function(data) {
+				$.each(data, function(p, o) {
+					var dom = "<option value ='" + p + "'>" + o + "</option>";
+					$(".two").append(dom)
+				});
+			}
+		});
+
+	})
+	//第三级
+	$(".two").change(function() {
+		$(".three").val("")
+		$(".three").get(0).options.length = 1
+		var dld = $(".two").val()
+		$.ajax({
+			type: "get",
+			url: "./js/region.php",
+			data: {
+				"type": "d",
+				"pid": dld
+			},
+			success: function(data) {
+				$.each(data, function(p, o) {
+					var dom = "<option value ='" + p + "'>" + o + "</option>";
+					$(".three").append(dom)
+				});
+			}
+		});
+
+	})
+
+	
+</script>

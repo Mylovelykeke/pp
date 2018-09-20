@@ -1,0 +1,42 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+ul,ol,li{
+	list-style: none;
+}
+input,button{
+	outline:0 none;
+}
+img{
+	border: 0 none;
+	vertical-align: top;
+}
+a{
+	text-decoration: none;
+}
+i{
+	font-style: normal;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix::before,.clearfix::after{
+	content: "";
+	display: table;
+}
+.clearfix::after{
+	clear: both;
+}
+.clearfix{
+	zoom: 1;
+}
+.container{
+	width: 1120px;
+	margin: 0 auto;
+}
+

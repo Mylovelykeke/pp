@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img {
+				width: 100%;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+	
+	</head>
+
+	<body>
+		<div class="header"></div>
+		
+		<!---->
+		
+		<div class="pop demo-1">
+
+			<div id="slider" class="sl-slider-wrapper">
+
+				<div class="sl-slider">
+
+					<div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+						<div class="sl-slide-inner">
+							<img src="img/pc_banner_20170906_1.png" alt="" />
+						</div>
+					</div>
+
+					<div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+						<div class="sl-slide-inner">
+							<img src="img/pc_banner_20170906_2.jpg" alt="" />
+						</div>
+					</div>
+
+					<div class="sl-slide bg-3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<img src="img/pc_banner_20171012.png" alt="" />
+						</div>
+					</div>
+
+					<div class="sl-slide bg-4" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<img src="img/pc_banner_20180823.jpg"/>
+						</div>
+					</div>
+
+				</div>
+				<!-- /sl-slider -->
+
+				<nav id="nav-arrows" class="nav-arrows">
+					<span class="nav-arrow-prev">Previous</span>
+					<span class="nav-arrow-next">Next</span>
+				</nav>
+
+				<nav id="nav-dots" class="nav-dots">
+					<span class="nav-dot-current"></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</nav>
+
+			</div>
+			<!-- /slider-wrapper -->
+
+		</div>
+		<!---->
+		<div class="container">
+			<div class="public">
+				<span>有什么新鲜事想告诉大家?</span>
+				<textarea name="" rows="" cols="" style="resize: none; height:80px ;width:100%; font-size: 18px;"></textarea>
+				<input type="submit" value="发布" id="publish"/>
+			</div>
+			<!--动态栏-->
+				<div  class="trend clearfix">
+						<span class="photo"></span>
+						<i>soul官方管理员</i>
+						<div class="trend-contain">
+							<p>欢迎你来到soul这个大家庭，有什么想说的就在这儿说吧!!!!!</p>
+							<div class="trend-img"><img src="img/home.1904211.jpg"/></div>
+						</div>
+						<ul class="fr">
+							<li>
+								<a href="#">转发</a>
+							</li>
+							<li>
+								<a href="#">评论</a>
+							</li>
+							<li>点赞</li>
+						</ul>
+					</div>
+					<!---->
+				<div class="allTrend">
+					<div id="muban" class="trend clearfix">
+						<span class="photo"></span>
+						<i>soul官方管理员</i>
+						<div class="trend-contain">
+							<p>欢迎你来到soul这个大家庭，有什么想说的就在这儿说吧!!!!!</p>
+							<div class="trend-img"><img src="img/home.1904211.jpg"/></div>
+						</div>
+						<ul class="fr">
+							<li>
+								<a href="#">转发</a>
+							</li>
+							<li>
+								<a href="#">评论</a>
+							</li>
+							<li>点赞</li>
+						</ul>
+					</div>
+				</div>
+				<!--end-->
+		</div>
+		<div class="more">加载更多</div>
+		<!---->
+		<div class="footer"></div>
+	</body>
+
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/treestroll.js"></script>
+		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
+			
+		<script>
+			$(function() {
+
+				var Page = (function() {
+
+					var $navArrows = $('#nav-arrows'),
+						$nav = $('#nav-dots > span'),
+						slitslider = $('#slider').slitslider({
+							onBeforeChange: function(slide, pos) {
+
+								$nav.removeClass('nav-dot-current');
+								$nav.eq(pos).addClass('nav-dot-current');
+
+							}
+						}),
+
+						init = function() {
+
+							initEvents();
+
+						},
+						initEvents = function() {
+
+							// add navigation events
+							$navArrows.children(':last').on('click', function() {
+
+								slitslider.next();
+								return false;
+
+							});
+
+							$navArrows.children(':first').on('click', function() {
+
+								slitslider.previous();
+								return false;
+
+							});
+							var timer = setInterval(function(){
+								slitslider.next();
+								return false;
+							},3000)
+				
+							$(".pop").hover(function(){
+								clearInterval(timer)
+							},function(){
+								timer = setInterval(function(){
+								slitslider.next();
+								return false;
+								},3000)
+							})
+
+							$nav.each(function(i) {
+
+								$(this).on('click', function(event) {
+
+									var $dot = $(this);
+
+									if(!slitslider.isActive()) {
+
+										$nav.removeClass('nav-dot-current');
+										$dot.addClass('nav-dot-current');
+
+									}
+
+									slitslider.jump(i + 1);
+									return false;
+
+								});
+
+							});
+
+						};
+
+					return {
+						init: init
+					};
+
+				})();
+
+				Page.init();
+			});
+		</script>

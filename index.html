@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>soul官网</title>
+		<style>
+			body {
+				overflow: hidden;
+			}
+			
+			.scroll {
+				width: 100%;
+				position: relative;
+				background: #070B1F;
+			}
+			
+			.scroll ul {
+				position: absolute;
+				width: 100%;
+				background: 100%;
+			}
+			
+			.scroll>ul>li {
+				position: relative;
+				width: 100%;
+				color: white;
+				overflow: hidden;
+			}
+			
+			img {
+				width: 100%;
+			}
+			
+			.scroll ol {
+				position: absolute;
+				top: 250px;
+				right: 0;
+			}
+			
+			.scroll>ol>li {
+				width: 6px;
+				height: 6px;
+				background: rgb(0, 255, 242);
+				border-radius: 50%;
+				margin: 20px 48px;
+				transition: all 1s ease;
+			}
+			
+			.change {
+				transform: scale(1.8);
+			}
+			
+			.scroll .opt {
+				position: relative;
+				margin-top: 60px;
+				margin-left: 290px;
+				width: 340px;
+				height: 580px;
+				border: 1px solid rgb(0, 255, 242);
+				border-radius: 50px 50px 10px 10px;
+			}
+			
+			.opt::after,
+			.opt::before {
+				content: "";
+				position: absolute;
+				width: 6px;
+				height: 50px;
+				background: rgb(0, 255, 238);
+				top: 170px;
+				left: -6px;
+				border-radius: 5px;
+			}
+			
+			.opt::before {
+				top: 235px;
+			}
+			
+			.opt .optInner {
+				position: relative;
+				margin: 1px 4px 0px;
+				width: 330px;
+				height: 570px;
+				border: 1px solid rgb(0, 255, 242);
+				border-radius: 51px 51px 10px 10px;
+			}
+			
+			.optInner::after,
+			.optInner::before {
+				position: absolute;
+				content: "";
+				width: 6px;
+				height: 20px;
+				background: rgb(0, 255, 238);
+				border-radius: 10px;
+			}
+			
+			.optInner::after {
+				left: -11px;
+				top: 80px;
+				height: 35px;
+			}
+			
+			.optInner::before {
+				right: -9px;
+				top: 116px;
+				height: 50px;
+			}
+			
+			.optR {
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				background: rgb(0, 255, 238);
+				border-radius: 50%;
+				top: 12px;
+				right: 162px;
+			}
+			
+			.optR::after,
+			.optR::before {
+				position: absolute;
+				content: "";
+				height: 11px;
+				background: rgb(0, 255, 238);
+			}
+			
+			.optR::after {
+				width: 11px;
+				top: 23px;
+				left: -43px;
+				border-radius: 50%;
+			}
+			
+			.optR::before {
+				height: 6px;
+				width: 56px;
+				top: 25px;
+				left: -17px;
+				border-radius: 10px;
+			}
+			
+			.optVideo {
+				width: 290px;
+				height: 510px;
+				margin: 70px 20px 0;
+			}
+			
+			.download {
+				position: absolute;
+				width: 350px;
+				height: 1000px;
+				background: linear-gradient(#0a3042, #0c717f);
+				right: 100px;
+				top: 0;
+			}
+			
+			#dw-big {
+				display: block;
+				text-align: left;
+				font-size: 55px;
+				font-weight: bolder;
+				margin: 100px 0 0 10px;
+				line-height: 80px;
+			}
+			
+			#dw-small {
+				display: block;
+				font-size: 14px;
+				line-height: 26px;
+				margin-left: 10px;
+			}
+			
+			.dw-middle {
+				margin-left: 10px;
+				display: block;
+				font-size: 30px;
+				line-height: 80px;
+				font-weight: bolder;
+			}
+			
+			.download img {
+				margin: 10px 0 0 10px;
+				width: 200px;
+			}
+			
+			.left>.download {
+				width: 420px;
+				left: 0;
+				padding-left: 30px;
+			}
+			.left>.carrou{
+				right: -800px;
+			}
+			.scroll .carrou{
+				position: absolute;
+				width: 860px;
+				height: 700px;
+				top: 0;
+				left: 100px;
+				margin: 80px auto;
+			}
+			.carrou>.horse{
+				position: relative;
+			}
+			.horse>div{
+				position: absolute;
+				width: 300px;
+				height: 530px;
+				top: 0;
+				left: 0;
+			}
+			.carrou>ol{
+				position: absolute;
+				width: 100px;
+				height: 22px;
+			}
+			.carrou>ol>li{
+				width: 20px;
+				height: 20px;
+				background: red;
+			}
+			.left>pp{
+				width: 600px;
+				right: -800px;
+			}
+			#bbq{
+				margin: 62px 390px;
+			}
+			.down-erweima{
+				width: 88%;
+				height:90%;
+				position: absolute;
+				left: 21px;
+				top: 71px;
+				background: white;
+				z-index: 1000;
+				display: none;
+			}
+			.down-erweima>img{
+				width: 200px;
+				position: absolute;
+				top: 22px;
+				left: 50px;
+				right: 0;
+				bottom: 0;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<script src="js/jquery-1.12.4.js"></script>
+		<script src="js/move.js"></script>
+		<script type="text/javascript" src="js/mousewheel.js"></script>
+		<script src="js/scroll.js"></script>
+	</head>
+
+	<body>
+		<div class="header"></div>
+		<div class="scroll">
+			<ul>
+				<li class="p">
+					<img src="img/home.1904211.jpg" />
+				</li>
+				<li>
+					<div class="opt">
+						<div class="optInner">
+							<div class="optR"></div>
+							<div class="optVideo">
+								<video width="290" height="510" autoplay="autoplay" muted="muted" loop="loop" controls="controls">
+									<source src="img/official.mp4" type="video/mp4"></source>
+								</video>
+								<div class="down-erweima"><img src="img/qr-soul.5418d24.png"/></div>
+							</div>
+						</div>
+					</div>
+					<div class="download">
+						<span id="dw-big">下载</span>
+						<span class="dw-middle">Download</span>
+						<span id="dw-small">HI,地球人！<br /> 欢迎登陆Soul星球！<br/>这是一个早已被人类遗忘的星球 <br />
+					 可以自由发泄情绪和观点  <br />每一个孤独灵魂在星球的低声呓语  <br />都可以穿越漫长遥远的时空 <br />
+					  碰撞另一个灵魂。
+					</span>
+						<img src="img/下载.png" / id="dw-img">
+					</div>
+				</li>
+				<li class="left">
+					<div class="download">
+						<span id="dw-big">合拍</span>
+						<span class="dw-middle">Appropriate</span>
+						<span id="dw-small">最孤独的 <br />  是没有行星相伴的恒星 <br/> 日复一日旋转在遥远又寒冷的 <br />
+					  宇宙尽头  <br /> Soul星球好友合拍 <br /> 生成你的好友星系 
+					</span>
+					</div>
+					<div class="carrou">
+						<ul class="horse">
+							<div><img src="img/page1.c3d7c60.png" alt="" /></div>
+							<div><img src="img/page2.bb497dd.png"/></div>
+							<div><img src="img/page3.8242b46.png" alt="" /></div>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<div class="download">
+						<span id="dw-big">聊天</span>
+						<span class="dw-middle">Chat</span>
+						<span id="dw-small">  有趣的人都在soul星球 <br /> 匿名广场让你可以自由表达自己 <br/> 
+        								独立音乐人，街头画家，手工艺人聚集在这里<br /> 这是一个让你开拓视野的窗口 <br />
+        								找到与你契合的人<br /> 使用丰富的聊天场景<br /> 让聊天更有趣<br />
+       						 与Souler轻松点亮soulmate！
+					</span>
+					</div>
+					<div class="carrou">
+						<ul class="horse horebot">
+							<div><img src="img/1.4e1d334.png" alt="" /></div>
+							<div><img src="img/2.3134550.png"/></div>
+							<div><img src="img/3.35aadd5.png" alt="" /></div>
+						</ul>
+					</div>
+				</li>
+				<li class="left" id="maodian">
+					<div class="download">
+						<span id="dw-big">联系</span>
+						<span class="dw-middle">Concat</span>
+					</div>
+					<div class="carrou" id="bbq">
+						<div style="width: 100%; height: 600px;border:#ccc solid 1px;" id="dituContent"></div>
+					</div>
+				</li>
+			</ul>
+			<!--跟随-->
+			<ol>
+				<li class="change"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+		</li>
+	</body>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+	<script type="text/javascript ">
+		$(function() {
+			//创建和初始化地图函数:
+			function initMap() {
+
+				createMap(); //创建地图
+
+				setMapEvent(); //设置地图事件
+
+				addMapControl(); //向地图添加控件
+
+				//创建地图函数:
+			}
+
+			function createMap() {
+
+				var map = new BMap.Map("dituContent");
+				//			在百度地图容器中创建 - 一个地图
+				var point = new BMap.Point(118.7988334688, 32.0552612648);
+				//定义一个中心点坐标
+
+				map.centerAndZoom(point, 14); //设定地图的中心点和坐标并将地图显示在地图容器中
+				window.map = map; //将map变里存储在全局
+
+			}
+			//地图事件设置函数:
+			function setMapEvent() {
+
+				map.enableDragging(); //启用地图拖拽事件，默认启用(可不写)
+				//				map.enableScrollwheelZoom();//启用地图滚轮放大缩小
+				map.enableDoubleClickZoom(); //启用鼠标双击放大，默认启用(可不写)
+				map.enableKeyboard(); //启用键盘上下左右键移动地图}
+
+				//地图控件添加函数:
+			}
+
+			function addMapControl() {
+
+				//向地图中添加缩放控件
+				var ctrl_nav = new BMap.NavigationControl({
+					anchor: BMAP_ANCHOR_TOP_LEFT,
+					type: BMAP_NAVIGATION_CONTROL_LARGE
+				});
+
+				map.addControl(ctrl_nav) //向地图中添加缩略图控件
+				var ctrl_ove = new BMap.OverviewMapControl({
+					anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+					isOpen: 1
+				});
+
+				map.addControl(ctrl_ove); //向地图中添加比例尺控件
+
+				var ctrl_sca = new BMap.ScaleControl({
+					anchor: BMAP_ANCHOR_BOTTOM_LEFT
+				});
+				map.addControl(ctrl_sca);
+			}
+			initMap();
+			
+			$("#dw-img").click(function(){
+				$(".down-erweima").toggle()
+			})
+		})
+	</script>
+</html>
